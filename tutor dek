@@ -1,3 +1,12 @@
+## Intall Laravel 8
+
+composer create-project --prefer-dist laravel/laravel USK "8.*"
+
+## Install Bootstap Auth
+
+composer require laravel/ui:^3.4.6
+php artisan ui bootstrap --auth
+
 ## Create Model & Migration
 
 php artisan make:model Kategori -m

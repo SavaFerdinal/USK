@@ -1,5 +1,14 @@
 <h1 align="center">Step by Step E- Perpus</h1>
 
+## Intall Laravel 8
+
+<p>composer create-project --prefer-dist laravel/laravel USK "8.*"</p>
+
+## Install Bootstap Auth
+
+<p>composer require laravel/ui:^3.4.6</p>
+<p>php artisan ui bootstrap --auth</p>
+
 ## Create Model & Migration
 
 <p>php artisan make:model Kategori -m</p>
