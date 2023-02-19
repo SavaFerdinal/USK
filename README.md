@@ -1,0 +1,122 @@
+<h1 align="center">Step by Step E- Perpus</h1>
+## Create Model & Migration
+
+php artisan make:model Kategori -m
+php artisan make:model Penerbit -m
+php artisan make:model Buku -m
+php artisan make:model Peminjaman -m
+php artisan make:model Pesan -m
+php artisan make:model Pemberitahuan -m
+php artisan make:model Identitas -m
+
+## Create Role for Login
+
+php artisan make:middleware Role
+
+## Create Seeder
+
+php artisan make:seeder DataSeeder
+
+## Create Register Controller
+
+php artisan make:controller UserRegister
+
+## Create User Controller
+
+php artisan make:controller User/DashboardController
+php artisan make:controller User/PeminjamanController
+php artisan make:controller User/PengembalianController
+php artisan make:controller User/PesanController
+php artisan make:controller User/ProfileController
+
+## Create Admin Controller
+
+php artisan make:controller Admin/DashboardController
+php artisan make:controller Admin/AdministratorController
+php artisan make:controller Admin/AnggotaController
+php artisan make:controller Admin/DatabukuController
+php artisan make:controller Admin/IdentitasController
+php artisan make:controller Admin/KategoriController
+php artisan make:controller Admin/LaporanController
+php artisan make:controller Admin/PeminjamanController
+php artisan make:controller Admin/PenerbitController
+php artisan make:controller Admin/PesanController
+
+## Create Components & Layouts View
+
+components.admin.sidebar
+components.user.sidebar
+
+layouts.master
+
+## Create User View
+
+user.dashboard
+
+user.peminjaman.form
+user.peminjaman.riwayat
+
+user.pengembalian.form
+user.pengembalian.riwayat
+
+user.pesan.masuk
+user.pesan.terkirim
+
+user.profile
+
+## Create Admin View
+
+admin.dashboard
+
+admin.masterdata.administrator
+admin.masterdata.anggota
+admin.masterdata.peminjaman
+admin.masterdata.penerbit
+
+admin.katalog.buku
+admin.katalog.kategori
+
+admin.laporan.laporan
+admin.laporan.laporan_peminjaman_pdf
+admin.laporan.laporan_pengembalian_pdf
+admin.laporan.laporan_siswa_pdf
+
+admin.excel.peminjaman
+admin.excel.pengembalian
+admin.excel.user
+
+admin.pesan.masuk
+admin.pesan.terkirim
+
+admin.identitas
+
+## PDF Installation
+
+composer require barryvdh/laravel-dompdf
+
+Barryvdh\DomPDF\ServiceProvider::class, => add code to config/app.php inside 'providers'
+'PDF' => Barryvdh\DomPDF\Facade::class, => add code to config/app.php inside 'aliases'
+
+## Excel Instalation
+
+composer require maatwebsite/excel
+
+Maatwebsite\Excel\ExcelServiceProvider::class, => add code to config/app.php inside 'providers'
+'Excel' => Maatwebsite\Excel\Facades\Excel::class, => add code to config/app.php inside 'aliases'
+
+php artisan vendor:publish --provider="Maatwebsite\Excel\ExcelServiceProvider"
+
+php artisan make:export LaporanExport
+php artisan make:export PengembalianExport
+php artisan make:export UserExport
+
+## Create API
+
+php artisan make:controller API/APIBukuController
+php artisan make:controller API/APIIdentitasController
+php artisan make:controller API/APIKategoriController
+php artisan make:controller API/APIPemberitahuanController
+php artisan make:controller API/APIPeminjamanController
+php artisan make:controller API/APIPenerbitController
+php artisan make:controller API/APIPesanController
+php artisan make:controller API/APIUserController
