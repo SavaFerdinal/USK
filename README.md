@@ -1,122 +1,123 @@
 <h1 align="center">Step by Step E- Perpus</h1>
+
 ## Create Model & Migration
 
-php artisan make:model Kategori -m
-php artisan make:model Penerbit -m
-php artisan make:model Buku -m
-php artisan make:model Peminjaman -m
-php artisan make:model Pesan -m
-php artisan make:model Pemberitahuan -m
-php artisan make:model Identitas -m
+<p>php artisan make:model Kategori -m</p>
+<p>php artisan make:model Penerbit -m</p>
+<p>php artisan make:model Buku -m</p>
+<p>php artisan make:model Peminjaman -m</p>
+<p>php artisan make:model Pesan -m</p>
+<p>php artisan make:model Pemberitahuan -m</p>
+<p>php artisan make:model Identitas -m</p>
 
 ## Create Role for Login
 
-php artisan make:middleware Role
+<p>php artisan make:middleware Role</p>
 
 ## Create Seeder
 
-php artisan make:seeder DataSeeder
+<p>php artisan make:seeder DataSeeder</P>
 
 ## Create Register Controller
 
-php artisan make:controller UserRegister
+<p>php artisan make:controller UserRegister</p>
 
 ## Create User Controller
 
-php artisan make:controller User/DashboardController
-php artisan make:controller User/PeminjamanController
-php artisan make:controller User/PengembalianController
-php artisan make:controller User/PesanController
-php artisan make:controller User/ProfileController
+<p>php artisan make:controller User/DashboardController</P>
+<p>php artisan make:controller User/PeminjamanController</p>
+<p>php artisan make:controller User/PengembalianController</p>
+<p>php artisan make:controller User/PesanController</p>
+<p>php artisan make:controller User/ProfileController</p>
 
 ## Create Admin Controller
 
-php artisan make:controller Admin/DashboardController
-php artisan make:controller Admin/AdministratorController
-php artisan make:controller Admin/AnggotaController
-php artisan make:controller Admin/DatabukuController
-php artisan make:controller Admin/IdentitasController
-php artisan make:controller Admin/KategoriController
-php artisan make:controller Admin/LaporanController
-php artisan make:controller Admin/PeminjamanController
-php artisan make:controller Admin/PenerbitController
-php artisan make:controller Admin/PesanController
+<p>php artisan make:controller Admin/DashboardController</p>
+<p>php artisan make:controller Admin/AdministratorController</p>
+<p>php artisan make:controller Admin/AnggotaController</p>
+<p>php artisan make:controller Admin/DatabukuController</p>
+<p>php artisan make:controller Admin/IdentitasController</p>
+<p>php artisan make:controller Admin/KategoriController</p>
+<p>php artisan make:controller Admin/LaporanController</p>
+<p>php artisan make:controller Admin/PeminjamanController</p>
+<p>php artisan make:controller Admin/PenerbitController</p>
+<p>php artisan make:controller Admin/PesanController</p>
 
 ## Create Components & Layouts View
 
-components.admin.sidebar
-components.user.sidebar
-
-layouts.master
+<p>components.admin.sidebar</p>
+<p>components.user.sidebar</p>
+<br>
+<p>layouts.master</p>
 
 ## Create User View
 
-user.dashboard
-
-user.peminjaman.form
-user.peminjaman.riwayat
-
-user.pengembalian.form
-user.pengembalian.riwayat
-
-user.pesan.masuk
-user.pesan.terkirim
-
-user.profile
+<p>user.dashboard</p>
+<br>
+<p>user.peminjaman.form</p>
+<p>user.peminjaman.riwayat</p>
+<br>
+<p>user.pengembalian.form</p>
+<p>user.pengembalian.riwayat</p>
+<br>
+<p>user.pesan.masuk</p>
+<p>user.pesan.terkirim</p>
+<br>
+<p>user.profile</p>
 
 ## Create Admin View
 
-admin.dashboard
-
-admin.masterdata.administrator
-admin.masterdata.anggota
-admin.masterdata.peminjaman
-admin.masterdata.penerbit
-
-admin.katalog.buku
-admin.katalog.kategori
-
-admin.laporan.laporan
-admin.laporan.laporan_peminjaman_pdf
-admin.laporan.laporan_pengembalian_pdf
-admin.laporan.laporan_siswa_pdf
-
-admin.excel.peminjaman
-admin.excel.pengembalian
-admin.excel.user
-
-admin.pesan.masuk
-admin.pesan.terkirim
-
-admin.identitas
+<p>admin.dashboard</p>
+<br>
+<p>admin.masterdata.administrator</p>
+<p>admin.masterdata.anggota</p>
+<p>admin.masterdata.peminjaman</p>
+<p>admin.masterdata.penerbit</p>
+<br>
+<p>admin.katalog.buku</p>
+<p>admin.katalog.kategori</p>
+<br>
+<p>admin.laporan.laporan</p>
+<p>admin.laporan.laporan_peminjaman_pdf</p>
+<p>admin.laporan.laporan_pengembalian_pdf</p>
+<p>admin.laporan.laporan_siswa_pdf</p>
+<br>
+<p>admin.excel.peminjaman</p>
+<p>admin.excel.pengembalian</p>
+<p>admin.excel.user</p>
+<br>
+<p>admin.pesan.masuk</p>
+<p>admin.pesan.terkirim</p>
+<br>
+<p>admin.identitas</p>
 
 ## PDF Installation
 
-composer require barryvdh/laravel-dompdf
-
-Barryvdh\DomPDF\ServiceProvider::class, => add code to config/app.php inside 'providers'
-'PDF' => Barryvdh\DomPDF\Facade::class, => add code to config/app.php inside 'aliases'
+<p>composer require barryvdh/laravel-dompdf</p>
+<br>
+<p>Barryvdh\DomPDF\ServiceProvider::class, => add code to config/app.php inside 'providers'</p>
+<p>'PDF' => Barryvdh\DomPDF\Facade::class, => add code to config/app.php inside 'aliases'</p>
 
 ## Excel Instalation
 
-composer require maatwebsite/excel
-
-Maatwebsite\Excel\ExcelServiceProvider::class, => add code to config/app.php inside 'providers'
-'Excel' => Maatwebsite\Excel\Facades\Excel::class, => add code to config/app.php inside 'aliases'
-
-php artisan vendor:publish --provider="Maatwebsite\Excel\ExcelServiceProvider"
-
-php artisan make:export LaporanExport
-php artisan make:export PengembalianExport
-php artisan make:export UserExport
+<p>composer require maatwebsite/excel</p>
+<br>
+<p>Maatwebsite\Excel\ExcelServiceProvider::class, => add code to config/app.php inside 'providers'</p>
+<p>'Excel' => Maatwebsite\Excel\Facades\Excel::class, => add code to config/app.php inside 'aliases'</p>
+<br>
+<p>php artisan vendor:publish --provider="Maatwebsite\Excel\ExcelServiceProvider"</p>
+<br>
+<p>php artisan make:export LaporanExport</p>
+<p>php artisan make:export PengembalianExport</p>
+<p>php artisan make:export UserExport</p>
 
 ## Create API
 
-php artisan make:controller API/APIBukuController
-php artisan make:controller API/APIIdentitasController
-php artisan make:controller API/APIKategoriController
-php artisan make:controller API/APIPemberitahuanController
-php artisan make:controller API/APIPeminjamanController
-php artisan make:controller API/APIPenerbitController
-php artisan make:controller API/APIPesanController
-php artisan make:controller API/APIUserController
+<p>php artisan make:controller API/APIBukuController</p>
+<p>php artisan make:controller API/APIIdentitasController</p>
+<p>php artisan make:controller API/APIKategoriController</p>
+<p>php artisan make:controller API/APIPemberitahuanController</p>
+<p>php artisan make:controller API/APIPeminjamanController</p>
+<p>php artisan make:controller API/APIPenerbitController</p>
+<p>php artisan make:controller API/APIPesanController</p>
+<p>php artisan make:controller API/APIUserController</p>
