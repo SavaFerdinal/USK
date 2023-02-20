@@ -26,6 +26,16 @@
     </div>
   </div>
 </div>  
+
+<div class="mb-10">
+  @foreach ($beritas as $berita)
+      <div class="alert alert-primary alert-dismissible fade show">
+          {{ $berita->isi }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+  @endforeach
+</div>
+
 <div class="section">
   <div class="row">
     @foreach ($bukus as $buku)

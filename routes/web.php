@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdministratorController;
 use App\Http\Controllers\Admin\AnggotaController;
+use App\Http\Controllers\Admin\BeritaController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\DatabukuController;
 use App\Http\Controllers\Admin\IdentitasController;
@@ -145,4 +146,11 @@ Route::middleware(['auth', 'role:admin'])->prefix('/admin')->group(function () {
 
     Route::get('/pesan-terkirim', [AdminPesanController::class, 'pesanTerkirim'])->name('admin.pesan_terkirim');
     Route::post('/kirim-pesan', [AdminPesanController::class, 'kirimPesan'])->name('admin.kirim_pesan');
+
+     //- - - - - - - - - Berita - - - - - - - - - -
+     Route::get('/berita', [BeritaController::class, 'indexBerita'])->name('admin.berita');
+     Route::post('/tambah-berita', [BeritaController::class, 'storeBerita'])->name('admin.tambah_berita');
+     Route::put('/edit/berita/{id}', [BeritaController::class, 'updateBerita'])->name('admin.update_berita');
+     Route::post('/update-status-berita/{id}', [BeritaController::class, 'updateStatusBerita'])->name('admin.update_status_berita');
+     Route::delete('/hapus/berita/{id}', [BeritaController::class, 'deleteBerita']);
 });     
